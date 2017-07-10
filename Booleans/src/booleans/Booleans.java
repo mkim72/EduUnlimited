@@ -57,7 +57,7 @@ public class Booleans {
         double compareTo1 = s2.compareTo(s3);
         double compareTo2 = s3.compareTo(s1);
         System.out.println("Comparing 'Hi there!' to 'Howdy, partner! gives " + compareTo1);
-        System.out.println("Comparing 'Good morning.' to 'Howdy, partner! gives " + compareTo2);
+        System.out.println("Comparing 'Howdy, partner!' to 'Good morning.' gives " + compareTo2);
         System.out.println();
         
         boolean b1=true, b2=false;
