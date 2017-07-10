@@ -23,9 +23,9 @@ public class Repeater {
        String stringInput = keyboard.nextLine();
        
        System.out.println("Here we go!");
-       int count = 1; //if count starts at 0, use <countInput & (count+1); if count starts at 1, use <=countInput & (count)
-       while (count <= countInput) { 
-           System.out.println((count) + ". " + stringInput);
+       int count = 0; //if count starts at 0, use <countInput & (count+1); if count starts at 1, use <=countInput & (count)
+       while (count < countInput) { 
+           System.out.println((count+1) + ". " + stringInput);
            count ++;
        }
     }
