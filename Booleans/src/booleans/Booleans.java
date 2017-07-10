@@ -67,6 +67,6 @@ public class Booleans {
         System.out.println("False or true: " + (b2 || b1));
         System.out.println("False or false: " + (b2 || b2));
         System.out.println("True or true: " + (b1 || b1));
-    }
+    }    
     
 }
