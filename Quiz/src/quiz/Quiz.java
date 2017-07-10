@@ -119,6 +119,18 @@ public class Quiz {
             System.out.println("Sorry, 'merci!' is correct. \n");
         }
         
+        System.out.println("Question 7: True or False? Gal Gadot portrays Wonder Woman in the recent DC films.");
+        System.out.print("Your answer: ");
+        String answer7 = keyboard.nextLine();
+        totalQuestions++;
+        if (answer7.equals("True")) {
+            System.out.println("Correct! She's cool. \n");
+            rightAnswers++;
+        }
+        else {
+            System.out.println("Sorry, that was true. \n");
+        }
+        
         System.out.println("Your score is " + rightAnswers + " out of " + totalQuestions + " questions.");
     }
     
