@@ -20,6 +20,8 @@ public class AboutMe {
         System.out.println("I'm from San Ramon.");
         System.out.println("I enjoy reading, writing, and playing the piano.");
         System.out.println("My favorite color is orange.");
+        System.out.println("I really like Star Wars and Star Trek.\nMy brother and I watch TOS together.");
+        System.out.println("I went on a cruise to Alaska this summer with my family; \nwe saw whales and took a floatplane.");
     }
     
 }
