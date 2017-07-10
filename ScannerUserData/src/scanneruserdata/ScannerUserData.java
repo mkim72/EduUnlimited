@@ -51,7 +51,7 @@ public class ScannerUserData {
         boolean ageDay = age==birthDay;
         System.out.println("It is " + ageDay + " that " + name + "'s age is equal to " + name + "'s day of birth.");
         boolean year2000 = ((birthYear/2000) > 1);
-        System.out.println("It is " + year2000 + " that they were born after the year 2000.");
+        System.out.println("It is " + year2000 + " that " + name + " was born after the year 2000.");
         double shoeFun = shoe*javaFun;
         System.out.println(name + "'s shoe size multiplied by excitement level is " + shoeFun + "!");
     }
