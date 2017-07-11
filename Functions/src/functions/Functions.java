@@ -23,7 +23,7 @@ public class Functions {
         System.out.println("(2,8) to (4,-4) has distance " + distance(2,8,4,-4) + ".");
         
         formula(-6, -19, 0, 5);
-        formula(0, 7, 4, 4);
+        formula(0, 7, 4, 7);
     }
     public static double slope(int x1, int y1, int x2, int y2)
     {
