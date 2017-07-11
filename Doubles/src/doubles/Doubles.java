@@ -18,22 +18,22 @@ public class Doubles {
      */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        
+
         int dice1 = 0;
         int dice2 = 1;
         int round = 0;
         boolean quit = false;
         String choice = "";
-        while(dice1 != dice2) {
+        while (dice1 != dice2) {
             //round one
             if (round == 0) {
                 System.out.println("Let's roll the dice!");
-                dice1 = (int)(Math.random()*6 + 1);
-                dice2 = (int)(Math.random()*6 + 1);
+                dice1 = (int) (Math.random() * 6 + 1);
+                dice2 = (int) (Math.random() * 6 + 1);
                 System.out.println("\nDice One shows " + dice1 + ", Dice Two shows " + dice2 + ".");
-                    if (dice1 == dice2) {
-                        System.out.println("Conratulations, doubles!");
-                    }
+                if (dice1 == dice2) {
+                    System.out.println("Conratulations, doubles!");
+                }
                 round++;
             }
             //all other rounds
@@ -46,9 +46,9 @@ public class Doubles {
                     System.out.println("\nQuitter!");
                 }
                 if (choice.equals("yes")) {
-                dice1 = (int)(Math.random()*6 + 1);
-                dice2 = (int)(Math.random()*6 + 1);
-                System.out.println("\nDice One shows " + dice1 + ", Dice Two shows " + dice2 + ".");
+                    dice1 = (int) (Math.random() * 6 + 1);
+                    dice2 = (int) (Math.random() * 6 + 1);
+                    System.out.println("\nDice One shows " + dice1 + ", Dice Two shows " + dice2 + ".");
                     if (dice1 == dice2) {
                         System.out.println("Congratulations, doubles!");
                     }
@@ -56,5 +56,5 @@ public class Doubles {
             }
         }
         System.out.println("\nGame over!");
-    }    
+    }
 }

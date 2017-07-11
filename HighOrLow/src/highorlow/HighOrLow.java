@@ -18,8 +18,8 @@ public class HighOrLow {
      */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        
-        int numberReal = (int)(Math.random()*100 + 1);
+
+        int numberReal = (int) (Math.random() * 100 + 1);
         int numberGuess = 0;
         int guesses = 0;
         int hintValue = 0;
@@ -47,5 +47,5 @@ public class HighOrLow {
             }
         }
     }
-    
+
 }
