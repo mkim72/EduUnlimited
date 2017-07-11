@@ -18,31 +18,55 @@ public class ForLoopFun {
      */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-
+        //PART #1
         for (int i = 0; i < 10; i++) {
             System.out.println("I love Java!");
         }
         System.out.println();
         
-        System.out.println("Up to which number should I count?");
+        //PART #2
+        System.out.print("Up to which number should I count? ");
         int userInput = Integer.parseInt(keyboard.nextLine());
         for (int i = 0; i < userInput; i++) {
-            System.out.print(i + " ");
+            System.out.print((i+1) + " ");
         }
-        System.out.println();
+        System.out.println("\n");
         
-        int start = 0, end = 0, count = 0, i = 0;
+        //PART #3 (IC)
         System.out.println("I need a starting number, ending number, and number to count by.");
         System.out.print("START: ");
-        start = Integer.parseInt(keyboard.nextLine());
+        int start = Integer.parseInt(keyboard.nextLine());
         System.out.print("END: ");
-        end = Integer.parseInt(keyboard.nextLine());
+        int end = Integer.parseInt(keyboard.nextLine());
         System.out.print("COUNT BY: ");
-        count = Integer.parseInt(keyboard.nextLine());
-        for (i = start; i <= end; i +=count); {
+        int count = Integer.parseInt(keyboard.nextLine());
+        for (int i = start; i <= end; i+=count) {
             System.out.print(i + " ");
         }
+        System.out.println("\n");
         
+        //PART #4
+        int[] array = new int[10];
+        for (int i = 0; i < 10; i++) {
+            array[i] = i + 1;
+        }
+        int[] arrayCopy = new int[10];
+        for (int i = 0; i < 10; i++) {
+            arrayCopy[i] = array[i] + 2;
+            System.out.print(arrayCopy[i] + " ");
+        }
+        System.out.println("\n");
+        
+        //PART #5
+        int[] array100 = new int[100];
+        for (int i = 0; i < 100; i++) {
+            array100[i] = i + 1;
+            if (array100[i]%5 == 0) {
+                System.out.println(array100[i] + "!");
+            }
+            else {
+                System.out.println(array100[i]);
+            }
+        }
     }
-    
 }
