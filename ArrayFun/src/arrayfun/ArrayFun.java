@@ -51,7 +51,15 @@ public class ArrayFun {
         int index3 = 0;
         while (index3 < array3.length) {
             array3[index3] = (int)(Math.random() * 1000 + 1);
-            System.out.print(index3 + " ");
+            if (array3[index3] < 10) {
+                System.out.print(array3[index3] + "   ");
+            }
+            if (array3[index3] >= 10 && array3[index3] < 100) {
+                System.out.print(array3[index3] + "  ");
+            }
+            if (array3[index3] >= 100) {
+                System.out.print(array3[index3] + " ");
+            }
             if ((index3 + 1) == (index3 + 1) / 20 * 20) {
                 System.out.print("\n");
             }
