@@ -128,7 +128,7 @@ public class Quiz {
             rightAnswers++;
         }
         else {
-            System.out.println("Sorry, that was true. \n");
+            System.out.println("Sorry, that was . \n");
         }
         
         System.out.println("Your score is " + rightAnswers + " out of " + totalQuestions + " questions.");
