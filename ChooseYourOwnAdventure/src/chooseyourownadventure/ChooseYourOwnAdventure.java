@@ -22,8 +22,8 @@ public class ChooseYourOwnAdventure {
         // second round: choice2
         // third round: choice3
         //RESTART
-        boolean playAgain = false;
-        while (playAgain = false) {
+        boolean playAgain = true;
+        while (playAgain = true) {
             //CHOICE #1
             System.out.println("You're in a house or a castle, maybe, that much you can tell. You don't know why or how you're here.\nIt at first seems like you're alone, but then you notice two doors in front of you.");
             System.out.println("     ** The door on the left is burnished gold, with faded ornamentations around the handle. \n     The floor is dusty around it.");
@@ -64,7 +64,7 @@ public class ChooseYourOwnAdventure {
                 System.out.println("It is completely dark. Feeling along the walls, you realize you can go further.");
                 System.out.println("     1) You can remove the grate and drop into the rushing waters below. It must leave the house at some point.");
                 System.out.println("     2) You can feel along the walls and perhaps find a tunnel leading out of the house.");
-                System.out.println("Make your choice -- 1 or 2?");
+                System.out.print("Make your choice -- 1 or 2? ");
                 choice3 = keyboard.nextLine();
             }
             if (choice2.equals("B")) {
@@ -72,7 +72,7 @@ public class ChooseYourOwnAdventure {
                 System.out.println("Faded portraits hang on the walls, and it's somewhat chilling.");
                 System.out.println("     3) There's a tunnel behind a large portrait of an opera singer. Should you chance it?");
                 System.out.println("     4) There's a chill running behind a curtain -- a soft breeze. Could a window be open?");
-                System.out.println("Make your choice -- 3 or 4?");
+                System.out.print("Make your choice -- 3 or 4? ");
                 choice3 = keyboard.nextLine();
             }
             if (choice2.equals("C")) {
@@ -80,7 +80,7 @@ public class ChooseYourOwnAdventure {
                 System.out.println("But now that you're at the organ, you can hear something scratching behind the wall.");
                 System.out.println("     5) You can still leave. There's nothing stopping you from exiting the ballroom. Right?");
                 System.out.println("     6) Or, you could pull away the wall panel and see what's scratching.");
-                System.out.println("Make your choice -- 5 or 6?");
+                System.out.print("Make your choice -- 5 or 6? ");
                 choice3 = keyboard.nextLine();
             }
             if (choice2.equals("D")) {
@@ -88,7 +88,7 @@ public class ChooseYourOwnAdventure {
                 System.out.println("There's two paths in the woods ahead of you.");
                 System.out.println("     7) One is dense with dark trees and looks foreboding.");
                 System.out.println("     8) The other has brambles and other sharp plants, but you can see a faint light at the end.");
-                System.out.println("Risk your leg? 7 or 8.");
+                System.out.print("Risk your leg? 7 or 8. ");
                 choice3 = keyboard.nextLine();
             }
             else {
@@ -99,7 +99,7 @@ public class ChooseYourOwnAdventure {
             //FINAL ROOMS
             String choice4 = "";
             if (choice3.equals("1")) {
-                System.out.println("\nYou fall into the rushing waters below, but they're too fierce.");
+                System.out.println("\nYou fall into the rushing waters below, but they're too fierce!");
                 System.out.println("You drown in the filthy depths of the sewage.");
                 System.out.print("\nWould you like to play again? ");
                 choice4 = keyboard.nextLine();
@@ -113,7 +113,7 @@ public class ChooseYourOwnAdventure {
             }
             if (choice3.equals("3")) {
                 System.out.println("\nYou take the tunnel through the portrait, and it empties into a field of sharp brambles.");
-                System.out.println("You wander through the sharp bushes until you meet a cabdriver.");
+                System.out.println("Finally, you come to a dimly lit street and a cabdriver.");
                 System.out.println("She's kind enough to give you a ride to the city, where you find the help you need.");
                 System.out.print("\nCongratulations, you survived! Would you like to play again? ");
                 choice4 = keyboard.nextLine();
@@ -124,12 +124,35 @@ public class ChooseYourOwnAdventure {
                 System.out.print("\nWould you like to play again? ");
                 choice4 = keyboard.nextLine();
             }
+            if (choice3.equals("5")) {
+                System.out.println("\nYou turn around to leave the ballroom, terrified, and hurry back to the first room to remake your choice.");
+                playAgain = true;
+            }
+            if (choice3.equals("6")) {
+                System.out.println("\nYou manage to pry away at the wall panel, intensely curious. Finally, it's loose!");
+                System.out.println("Behind the panel is a rabid dog. You die at its claws.");
+                System.out.print("\nWould you like to play again? ");
+                choice4 = keyboard.nextLine();
+            }
+            if (choice3.equals("7")) {
+                System.out.println("\nYou wander through the dark forest, limping on your injured leg. It's quickly becoming colder.");
+                System.out.println("You die wandering in the maze-like woods.");
+                System.out.print("\nWould you like to play again? ");
+                choice4 = keyboard.nextLine();
+            }
+            if (choice3.equals("8")) {
+                System.out.println("\nYou wander through the brambles, limping on your hurt leg and suffering some more minor injuries.");
+                System.out.println("However, at the end you find a dimly lit street and a cabdriver.");
+                System.out.println("She's kind enough to give you a ride to the city, where you find the help you need.");
+                System.out.print("\nCongratulations, you survived! Would you like to play again? ");
+                choice4 = keyboard.nextLine();
+            }
             
             if (choice4 == "yes") {
-                playAgain = false;
+                playAgain = true;
             }
             if (choice4 == "no") {
-                playAgain = true;
+                playAgain = false;
             }
         }
         System.out.println("\nThanks for playing!");
