@@ -11,24 +11,39 @@ package person;
  */
 public class Person {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        int age = 17;
-        double height = 5.25; //feet
-        String firstName = "Michelle";
-        String lastName = "Kim";
-        boolean isAStudent = true;
-        int grade = 12;
-        String instrument = "piano";
-        
-        System.out.println("My name is " + firstName + " " + lastName + ".");
-        System.out.println("I am " + age + " years old.");
-        System.out.println("My height, in feet, is " + height + ".");
-        System.out.println("It is " + isAStudent + " that I am a student.");
-        System.out.println("Next school year, I will be in " + grade + "th grade.");
-        System.out.println("I can play the " + instrument + ".");
+    String phoneNumber, firstName, lastName;
+    String hobby;
+    int age, grade;
+    double height;
+    boolean isAStudent;
+    
+    public Person (String newFirstName, String newLastName, String newPhoneNumber) {
+        firstName = newFirstName;
+        lastName = newLastName;
+        phoneNumber = newPhoneNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
     
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
