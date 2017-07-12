@@ -24,14 +24,14 @@ public class Puzzles {
 	try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
 
             String currentLine = reader.readLine();
-            int lineNumber = 1;
+            int lineNumber = 0;
 
             while (currentLine != null) {
+                lineNumber++;
                 if (lineNumber%3==0) {
                     System.out.println(currentLine);
                 }
                 currentLine = reader.readLine();
-                lineNumber++;
             }
 	}
         catch (IOException e) {
