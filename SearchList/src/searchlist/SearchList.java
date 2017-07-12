@@ -84,11 +84,26 @@ public class SearchList {
         sentence.add("is!");
         // 16 values in the list
         
+        int x = 0, comparison = 0;
         i = 1;
         ArrayList newSentence = new ArrayList();
-        while (i < 16) {
-            
+        while (x < 16) {
+            //should run through the array 16 times
+            String firstWord = (String)sentence.get(0);
+            i = 1;
+            while (i < (int)sentence.size()) {
+                String word = (String)sentence.get(i);
+                comparison = word.compareTo(firstWord);
+                if (comparison < 0) {
+                    firstWord = word;
+                }
+                i++;
+            }
+            newSentence.add(firstWord);
+            sentence.remove(firstWord);
+            x++;
         }
+        System.out.println(newSentence);
     }
     
 }
