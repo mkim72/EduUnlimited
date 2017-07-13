@@ -79,12 +79,6 @@ public class ChooseYourOwnAdventureNest {
                             System.out.println("\nWould you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                         //IF 2 IS CHOSEN (THIRD CHOICE)
                         else if (choice3.equals("2")) {
@@ -94,12 +88,6 @@ public class ChooseYourOwnAdventureNest {
                             System.out.println("\nWould you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                     }
                     //IF B IS CHOSEN (SECOND CHOICE)
@@ -125,26 +113,14 @@ public class ChooseYourOwnAdventureNest {
                             System.out.println("\nCongratulations, you survived! Would you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                         //IF 2 IS CHOSEN (THIRD CHOICE)
-                        if (choice3.equals("2")) {
+                        else if (choice3.equals("2")) {
                             System.out.println("\nThere is a window! You step out, but you're not on the first floor.");
                             System.out.println("You fall to your death below.");
                             System.out.println("\nWould you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                     }
                 }
@@ -182,12 +158,6 @@ public class ChooseYourOwnAdventureNest {
                         if (choice3.equals("1")) {
                             System.out.println("\nYou turn around to leave the ballroom, terrified, and hurry back to the first room to remake your choice.");
                             playAgain = true;
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                         //IF 2 IS CHOSEN (THIRD CHOICE)
                         else if (choice3.equals("2")) {
@@ -196,12 +166,6 @@ public class ChooseYourOwnAdventureNest {
                             System.out.println("\nWould you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                     }
                     //IF B IS CHOSEN (SECOND CHOICE)
@@ -226,30 +190,25 @@ public class ChooseYourOwnAdventureNest {
                             System.out.println("\nWould you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                         //IF 2 IS CHOSEN (THIRD CHOICE)
-                        if (choice3.equals("2")) {
+                        else if (choice3.equals("2")) {
                             System.out.println("\nYou wander through the brambles, limping on your hurt leg and suffering some more minor injuries.");
                             System.out.println("However, at the end you find a dimly lit street and a cabdriver.");
                             System.out.println("She's kind enough to give you a ride to the city, where you find the help you need.");
                             System.out.println("\nCongratulations, you survived! Would you like to play again? ");
                             System.out.print("CHOOSE: ");
                             choice4 = keyboard.nextLine();
-                            if (choice4 == "yes") {
-                                playAgain = true;
-                            }
-                            else {
-                                playAgain = false;
-                            }
                         }
                     }
-                }       
+                }
+            if (choice4.equals("no")) {
+                playAgain = false;
+            }
+            else {
+                playAgain = true;
+            }
         }
+        System.out.println("\nThanks for playing!");
     }
 }
