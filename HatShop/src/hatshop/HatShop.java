@@ -23,6 +23,7 @@ public class HatShop {
         
         ArrayList cart = new ArrayList();
         String selection = "";
+        int numberOfHats = 5;
         
         while (!selection.equals("d")) {
             System.out.println("Welcome to Hattie's Hat Shop, where we fulfill all of your hat-y needs!");
@@ -34,7 +35,9 @@ public class HatShop {
             //SELECT: ORDER A HAT
             if (selection.equals("a")) {
                 boolean orderAgain = true;
-                int numberOfHats = 5;
+                if (numberOfHats == 0) {
+                    System.out.println("\nSorry! You already have 5 hats. Please proceed to check out, or remove a hat to order another.\n");
+                }
                 while (orderAgain == true && numberOfHats != 0) {
                     //WELCOME SCREEN
                     System.out.println("\nYOU'VE CHOSEN TO: DESIGN AND ORDER A HAT");
@@ -112,11 +115,12 @@ public class HatShop {
                 System.out.println("\nWe'll return you to the homescreen now.\n");
             }
             else if (selection.equals("c")) {
+                if ()
                 System.out.println("\nWhich hat order would you like to remove? Select its number.");
                 seeCart(cart);
                 System.out.println("\nREMOVE: ");
                 int remove = Integer.parseInt(keyboard.nextLine());
-                removeHatFromCart(cart, remove);
+                removeHatFromCart(cart, remove, numberOfHats);
             }
         }
     }
@@ -149,10 +153,11 @@ public class HatShop {
         System.out.println("Your total cost comes out to $" + totalPrice + ".");
     }
     
-    public static void removeHatFromCart(ArrayList cart, int remove) {
+    public static void removeHatFromCart(ArrayList cart, int remove, int numberOfHats) {
         //remove is i+1
         cart.remove(remove);
         cart.remove(remove);
         cart.remove(remove-1);
+        numberOfHats++;
     }
 }
