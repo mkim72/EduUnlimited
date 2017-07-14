@@ -115,7 +115,9 @@ public class HatShop {
                 System.out.println("\nWe'll return you to the homescreen now.\n");
             }
             else if (selection.equals("c")) {
-                if ()
+                /*if (numberOfHats == 5) {
+                    System.out.print
+                }*/
                 System.out.println("\nWhich hat order would you like to remove? Select its number.");
                 seeCart(cart);
                 System.out.println("\nREMOVE: ");
