@@ -19,88 +19,85 @@ public class StudentGradeBookTest {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         
-        boolean createClass = true;
-        
         System.out.println("Welcome to GradeBook, a useful electronic tool for storing students' grades!");
+        System.out.println("Let's start by building your class.");
         
-        while (createClass == true) {
-            System.out.println("\n\nSTEP 1: CREATE A CLASS");
-            System.out.println("First, let's name your class. (Ex: Biology, Period 1)");
-            System.out.print("NAME OF CLASS: ");
-            String className = keyboard.nextLine();
-            System.out.println("\nThank you! You may now start adding students to " + className + ".");
-            
-            System.out.println("\n\nSTEP 2: ADD STUDENTS");
-            System.out.println("How many students are in your class? You can add up to 50 per class.");
-            System.out.print("NUMBER OF STUDENTS: ");
-            int inClass = Integer.parseInt(keyboard.nextLine());
-            System.out.println("\nThank you! Let's start adding students.");
-            
-            StudentGradeBook gradeBook = new StudentGradeBook(); //creates a new StudentGradeBook class called "gradeBook"
-            
-            for (int i = 0; i < inClass; i++) {
-                //STUDENT INDENTIFICATION
-                System.out.println("\nSTUDENT #" + (i+1));
-                System.out.print("FIRST NAME: ");
-                String tempFirstName = keyboard.nextLine();
-                System.out.print("LAST NAME: ");
-                String tempLastName = keyboard.nextLine();
-                
-                //ADD TEST SCORES, FIND AVERAGE
-                System.out.println("\nLet's add test scores first.");
-                boolean addTests = true;
-                ArrayList allTests = new ArrayList();
-                while (addTests == true) {
-                    System.out.print("ADD A TEST SCORE: ");
-                    double test = Double.parseDouble(keyboard.nextLine());
-                    allTests.add(test);
-                    System.out.print("CONTINUE? ");
-                    String response = keyboard.nextLine();
-                    if (response.equals("no")) {
-                        addTests = false;
-                    }
-                }
-                double testAverage = round(findAverage(allTests), 2);
-                
-                //ADD ASSIGNMENT SCORES, FIND AVERAGE
-                System.out.println("Awesome! Now, let's add assignment scores.");
-                boolean addAssign = true;
-                ArrayList allAssign = new ArrayList();
-                while (addAssign == true) {
-                    System.out.print("ADD A TEST SCORE: ");
-                    double assign = Double.parseDouble(keyboard.nextLine());
-                    allAssign.add(assign);
-                    System.out.print("CONTINUE? ");
-                    String response = keyboard.nextLine();
-                    if (response.equals("no")) {
-                        addAssign = false;
-                    }
-                }
-                double assignAverage = round(findAverage(allAssign), 2);
-                
-                System.out.println("\nHow much weight do tests carry? (Ex: If 50%, enter 50.)");
-                System.out.print("TESTS: ");
-                double testWeight = Double.parseDouble(keyboard.nextLine());
-                
-                System.out.println("\nHow much weight do assignments carry? (Ex: If 50%, enter 50.)");
-                System.out.print("ASSIGNMENTS: ");
-                double assignWeight = Double.parseDouble(keyboard.nextLine());
-                
-                double tempAverage = findStudentAverage(testAverage, assignAverage, testWeight, assignWeight);
-                
-                String tempGrade = findLetter(tempAverage);
-                Student newStudent = new Student(tempFirstName, tempLastName, tempAverage, tempGrade, testAverage, assignAverage);
-                gradeBook.AddStudent(newStudent);
-            }
-            System.out.println("\n");
-            gradeBook.printSummaries(); //print students and grades!
-            System.out.println("\nDONE!");
-            System.out.print("\nWould you like to add another class? ");
-            String continueYesOrNo = keyboard.nextLine();
-            if (continueYesOrNo.equals("no")) {
-                createClass = false;
-            }
+        System.out.println("\n\nSTEP 1: CREATE A CLASS");
+        System.out.println("First, let's name your class. (Ex: Biology, Period 1)");
+        System.out.print("NAME OF CLASS: ");
+        String className = keyboard.nextLine();
+        System.out.println("\nThank you! You may now start adding students to " + className + ".");
+
+        System.out.println("\n\nSTEP 2: ADD STUDENTS");
+        //FOR LOOP WILL AUTOMATICALLY END AFTER NUMBER OF STUDENTS ARE ENTERED
+        System.out.println("How many students are in your class? You can add up to 50 per class.");
+        System.out.print("\tNUMBER OF STUDENTS: ");
+        int inClass = Integer.parseInt(keyboard.nextLine());
+        while (inClass < 1 || inClass > 50) {
+            System.out.println("Please enter a valid number.");
+            System.out.print("\tNUMBER OF STUDENTS: ");
+            inClass = Integer.parseInt(keyboard.nextLine());
         }
+        //GET WEIGHT FOR TESTS & ASSIGNMENTS
+        System.out.println("\nAnd how much weight do tests carry? (Ex: If 50%, enter 50.)");
+        System.out.print("\tTESTS: ");
+        double testWeight = Double.parseDouble(keyboard.nextLine());
+        System.out.println("How much weight do assignments carry? (Ex: If 50%, enter 50.)");
+        System.out.print("\tASSIGNMENTS: ");
+        double assignWeight = Double.parseDouble(keyboard.nextLine());
+        System.out.println("\nThank you! Now we can start adding students.");
+
+        StudentGradeBook gradeBook = new StudentGradeBook(); //creates a new StudentGradeBook class called "gradeBook"
+
+        for (int i = 0; i < inClass; i++) {
+            //STUDENT INDENTIFICATION
+            System.out.println("\nSTUDENT #" + (i+1));
+            System.out.print("\tFIRST NAME: ");
+            String tempFirstName = keyboard.nextLine();
+            System.out.print("\tLAST NAME: ");
+            String tempLastName = keyboard.nextLine();
+
+            //ADD TEST SCORES, FIND AVERAGE
+            System.out.println("Let's add test scores for " + tempFirstName + ".");
+            System.out.println("How many tests do you plan on adding?");
+            System.out.print("\tNUMBER OF TESTS: ");
+            int numberOfTests = Integer.parseInt(keyboard.nextLine());
+            ArrayList allTests = new ArrayList();
+            for (int x = 0; x < numberOfTests; x++) {
+                System.out.print("\t\tTEST SCORE #" + (x+1) + ": ");
+                double test = Double.parseDouble(keyboard.nextLine());
+                allTests.add(test);
+            }
+            double testAverage = round(findAverage(allTests), 2); //test grade to 2 decimals
+
+            //ADD ASSIGNMENT SCORES, FIND AVERAGE
+            System.out.println("Let's add assignment scores for " + tempFirstName + ".");
+            System.out.println("How many assignments do you plan on adding?");
+            System.out.print("\tNUMBER OF ASSIGNMENTS: ");
+            int numberOfAssign = Integer.parseInt(keyboard.nextLine());
+            ArrayList allAssign = new ArrayList();
+            for (int x = 0; x < numberOfAssign; x++) {
+                System.out.print("\t\tASSIGNMENT SCORE #" + (x+1) + ": ");
+                double assign = Double.parseDouble(keyboard.nextLine());
+                allAssign.add(assign);
+            }
+            double assignAverage = round(findAverage(allAssign), 2); //assignment grade to 2 decimals
+            
+            double tempAverage = round(findStudentAverage(testAverage, assignAverage, testWeight, assignWeight), 2); //the total grade to 2 decimals
+
+            String tempGrade = findLetter(tempAverage);
+            
+            Student newStudent = new Student(tempFirstName, tempLastName, tempAverage, tempGrade, testAverage, assignAverage, allTests, allAssign);
+            gradeBook.AddStudent(newStudent); //adding objects to class type student, which holds the info
+        }
+        System.out.println("\nYOUR GRADEBOOK FOR " + className + ":");
+        gradeBook.printSummaries(); //print students with grades!
+        System.out.println("\nDONE! Congratulations!");
+        
+        System.out.println("\n\nNow that you're done building your class, here are some options for accessing your students' stats:");
+        System.out.println("\t(a) Look at the specific scores for one student.\n\t(b) Compare students to check for advancement by number.\n\t(c) Compare students to check for advancement by graph.");
+        System.out.print("SELECT: ");
+        String select = keyboard.nextLine();
     }
     
     //FOR ROUNDING STUFF

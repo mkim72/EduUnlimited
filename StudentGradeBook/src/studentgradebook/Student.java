@@ -9,19 +9,23 @@ package studentgradebook;
  *
  * @author Education Unlimited
  */
+import java.util.ArrayList;
+
 public class Student {
     // naming objects
     String firstName, lastName, letterGrade;
     double testScoreAvg, assignScoreAvg, totalAverage; //totalAverage = 89.5%
-    Student[] students;
+    ArrayList testScores, assignScores;
     
-    public Student (String newFirstName, String newLastName, double newTotalAverage, String newLetterGrade, double newTestScoreAvg, double newAssignScoreAvg) {
+    public Student (String newFirstName, String newLastName, double newTotalAverage, String newLetterGrade, double newTestScoreAvg, double newAssignScoreAvg, ArrayList newTestScores, ArrayList newAssignScores) {
         firstName = newFirstName;
         lastName = newLastName;
         totalAverage = newTotalAverage;
         letterGrade = newLetterGrade;
         testScoreAvg = newTestScoreAvg;
         assignScoreAvg = newAssignScoreAvg;
+        testScores = newTestScores;
+        assignScores = newAssignScores;
     }
     
     // getting/setting objects
@@ -71,5 +75,21 @@ public class Student {
 
     public void setAssignScoreAvg(double assignScoreAvg) {
         this.assignScoreAvg = assignScoreAvg;
+    }
+    
+    public ArrayList getTestScores() {
+        return testScores;
+    }
+
+    public void setTestScores(ArrayList testScores) {
+        this.testScores = testScores;
+    }
+
+    public ArrayList getAssignScores() {
+        return assignScores;
+    }
+
+    public void setAssignScores(ArrayList assignScores) {
+        this.assignScores = assignScores;
     }
 }

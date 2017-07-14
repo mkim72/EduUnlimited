@@ -31,4 +31,8 @@ public class StudentGradeBook {
             //^^ from the getter/setter functions created in the student.java
         }
     }
+    
+    public void printScores() {
+        
+    }
 }
