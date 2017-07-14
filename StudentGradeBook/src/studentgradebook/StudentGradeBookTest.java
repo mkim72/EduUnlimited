@@ -151,7 +151,7 @@ public class StudentGradeBookTest {
             }
             //allows the user to see statistics for the entire class
             if (select.equals("b")) {
-                System.out.println("\n\nHere are some statistics regarding your class, " + className + ":");
+                System.out.println("\n\nHere are some statistics regarding your class (" + className + "):");
                 gradeBook.printMean();
                 System.out.print("The population standard deviation for test scores in the class is ");
                 gradeBook.printStandardDeviationTests();
@@ -165,7 +165,7 @@ public class StudentGradeBookTest {
             }
         }
         //final screen/message!
-        System.out.println("\n\nAnd you're done! Thank you for building a class with GradeBook!");
+        System.out.println("\n\nAnd you're done! Thank you for building your class with GradeBook!");
         System.out.println("\nHave a great day! :)");
     }
     
