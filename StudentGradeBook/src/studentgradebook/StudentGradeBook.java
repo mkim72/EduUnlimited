@@ -111,11 +111,11 @@ public class StudentGradeBook {
         for (int n = 0; n < deviations.size(); n++) {
             sum += (double)(deviations.get(n));
         }
-        sum = sum / deviations.size();
+        sum = sum / deviations.size(); //divide by the amount of values to get the mean
         
-        double standardDeviation = round(Math.sqrt(sum), 2);
+        double standardDeviation = round(Math.sqrt(sum), 2); //square the mean
         
-        System.out.println(standardDeviation + ".");
+        System.out.println(standardDeviation + "."); //print with period on the end
     }
     
     public void printStandardDeviationAssign() {
@@ -150,11 +150,11 @@ public class StudentGradeBook {
         for (int n = 0; n < deviations.size(); n++) {
             sum += (double)(deviations.get(n));
         }
-        sum = sum / deviations.size();
+        sum = sum / deviations.size(); //divide by the amount of values for the mean
         
-        double standardDeviation = round(Math.sqrt(sum), 2);
+        double standardDeviation = round(Math.sqrt(sum), 2); //square the mean
         
-        System.out.println(standardDeviation + ".");
+        System.out.println(standardDeviation + "."); //print the standard deviation with a period
     }
     
     //FOR ROUNDING DECIMALS

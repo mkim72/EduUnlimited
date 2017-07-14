@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class Student {
     // naming objects
-    String firstName, lastName, letterGrade;
-    double testScoreAvg, assignScoreAvg, totalAverage; //totalAverage = 89.5%
-    ArrayList testScores, assignScores;
+    String firstName, lastName, letterGrade; //values to hold a student's first name, last name, and letter grade
+    double testScoreAvg, assignScoreAvg, totalAverage; //values to hold a student's average test score, average assignment score, and overall grade
+    ArrayList testScores, assignScores; //arrays to hold a student's test scores and assignment scores
     
     public Student (String newFirstName, String newLastName, double newTotalAverage, String newLetterGrade, double newTestScoreAvg, double newAssignScoreAvg, ArrayList newTestScores, ArrayList newAssignScores) {
         firstName = newFirstName;

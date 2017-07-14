@@ -19,6 +19,7 @@ public class StudentGradeBookTest {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         
+        //"starting screen"
         System.out.println("\n\nWelcome to GradeBook, a useful electronic tool for storing students' grades!");
         System.out.println("Let's start by building your class.");
         
@@ -130,10 +131,9 @@ public class StudentGradeBookTest {
         System.out.println("\nDONE! Congratulations, you've finished building your class (" + className + ")!");
         
         boolean viewInfo = true;
-        
         while (viewInfo == true) {
             System.out.println("\n\nHere are some options for accessing your students' stats.\nIf you do not want to view your class' stats and would like to exit, type DONE.");
-            System.out.println("\t(a) Look at the students' test and assignment grades.\n\t(b) Compare students by class statistics.");
+            System.out.println("\t(a) Look at the students' test and assignment scores.\n\t(b) Compare students by class statistics.");
             System.out.print("SELECT: ");
             String select = keyboard.nextLine();
             
@@ -193,7 +193,7 @@ public class StudentGradeBookTest {
         return (tests + assignments);
     }
     
-    //function used for finding the student's letter grade
+    //function used for finding the student's letter grade (nested if statements)
     public static String findLetter(double averageTestScore) {
         String rV = "error";
         if (averageTestScore > 0) {
