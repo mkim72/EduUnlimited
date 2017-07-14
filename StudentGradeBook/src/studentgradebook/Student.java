@@ -57,7 +57,7 @@ public class Student {
         return testScoreAvg;
     }
 
-    public void setTestScoreAvg(double testScore) {
+    public void setTestScoreAvg(double testScoreAvg) {
         this.testScoreAvg = testScoreAvg;
     }
 
